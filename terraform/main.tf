@@ -32,7 +32,7 @@ resource "aws_s3_bucket_website_configuration" "website_bucket_config" {
   }
 
   error_document {
-    key = "index.html"  # Fallback to index.html on errors
+    key = "index.html" # Fallback to index.html on errors
   }
 }
 
@@ -43,7 +43,7 @@ resource "aws_s3_bucket_public_access_block" "website_bucket_pab" {
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
-  restrict_public_buckets  = true
+  restrict_public_buckets = true
 }
 
 # ============================================================================
@@ -126,11 +126,11 @@ resource "aws_cloudfront_distribution" "website_distribution" {
       }
     }
 
-    viewer_protocol_policy = "redirect-to-https"  # Force HTTPS
+    viewer_protocol_policy = "redirect-to-https" # Force HTTPS
     min_ttl                = 0
-    default_ttl            = 3600   # Cache for 1 hour
-    max_ttl                = 86400  # Maximum cache 24 hours
-    compress               = true   # Enable compression
+    default_ttl            = 3600  # Cache for 1 hour
+    max_ttl                = 86400 # Maximum cache 24 hours
+    compress               = true  # Enable compression
   }
 
   # Custom error responses
@@ -149,7 +149,7 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   # Restrictions
   restrictions {
     geo_restriction {
-      restriction_type = "none"  # Allow access from all countries
+      restriction_type = "none" # Allow access from all countries
     }
   }
 

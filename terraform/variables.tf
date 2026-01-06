@@ -14,8 +14,8 @@ variable "bucket_name" {
 variable "cloudfront_price_class" {
   description = "The price class for CloudFront distribution"
   type        = string
-  default     = "PriceClass_100"  # US, Canada, Europe (cheapest option)
-  
+  default     = "PriceClass_100" # US, Canada, Europe (cheapest option)
+
   validation {
     condition     = contains(["PriceClass_100", "PriceClass_200", "PriceClass_All"], var.cloudfront_price_class)
     error_message = "Price class must be one of: PriceClass_100, PriceClass_200, or PriceClass_All"
@@ -25,5 +25,5 @@ variable "cloudfront_price_class" {
 variable "enable_s3_versioning" {
   description = "Enable versioning on S3 bucket (may incur additional storage costs)"
   type        = bool
-  default     = false  # Set to false to minimize costs for free tier
+  default     = false # Set to false to minimize costs for free tier
 }

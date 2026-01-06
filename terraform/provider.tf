@@ -11,7 +11,7 @@ terraform {
   # The backend block MUST be inside the terraform block
   # Replace YOUR_BACKEND_BUCKET_NAME with your actual S3 backend bucket name
   backend "s3" {
-    bucket = "s3-cicd-tf-saby"  # Replace with your backend bucket name
+    bucket = "s3-cicd-tf-saby" # Replace with your backend bucket name
     key    = "cloudfront-site/terraform.tfstate"
     region = "us-east-1"
   }
