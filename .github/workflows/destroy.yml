@@ -22,7 +22,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.9.5
+          terraform_version: 1.14.3
 
       - name: Terraform Init
         env:
@@ -34,4 +34,5 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          TF_VAR_bucket_name: "gaurav-terraform-learning-2024"
         run: terraform destroy -auto-approve
